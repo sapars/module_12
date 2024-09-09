@@ -25,7 +25,7 @@ tearDownClass - метод, где выводятся all_results по очер�
 
 
 class TournamentTest(TestCase):
-    is_frozen = False
+    #is_frozen = False
 
 
     @classmethod
@@ -53,21 +53,21 @@ class TournamentTest(TestCase):
         self.nick.distance = 0
 
 
-    @skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
+    #@skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_runner_order(self):
         tournament = Tournament(self.distance, self.usain, self.nick)
         TournamentTest.all_results = tournament.start()
         self.assertTrue(self.nick == list(self.all_results.values())[-1], 'Nick is the last runner')
         # print('test_runner_order OK')
 
-    @skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
+    #@skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_runner_order2(self):
         tournament = Tournament(self.distance, self.nick, self.andrew)
         TournamentTest.all_results = tournament.start()
         self.assertTrue(self.nick == list(self.all_results.values())[-1], 'Nick is the last runner')
         # print('test_runner_order2 OK')
 
-    @skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
+    #@skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_runner_order3(self):
         tournament = Tournament(self.distance, self.usain, self.andrew, self.nick)
         TournamentTest.all_results = tournament.start()
